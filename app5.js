@@ -29,6 +29,7 @@ app.get("/luck", (req, res) => {
 
 app.get("/janken", (req, res) => {
   let hand = req.query.hand;
+  let judgement = '';
   let win = Number( req.query.win );
   let total = Number( req.query.total );
   console.log( {hand, win, total});
@@ -39,9 +40,17 @@ app.get("/janken", (req, res) => {
   else cpu = 'パー';
   // ここに勝敗の判定を入れる
   // 今はダミーで人間の勝ちにしておく
-  let judgement = '勝ち';
-  win += 1;
-  total += 1;
+  if((hand == 'グー' && cpu == 'チョキ') || (hand == 'チョキ' && cpu == 'パー') || (hand == 'パー' && cpu == 'グー')) {
+    judgement = '勝ち';
+    win += 1;
+    total += 1;
+  } else if ((hand == 'グー' && cpu == 'グー') || (hand == 'チョキ' && cpu == 'チョキ') || (hand == 'パー' && cpu == 'パー')) {
+    judgement = 'あいこ';
+    total += 1;
+  } else if ((hand == 'グー' && cpu == 'パー') || (hand == 'チョキ' && cpu == 'グー') || (hand == 'パー' && cpu == 'チョキ')) {
+    judgement = '負け';
+    total += 1;
+  }
   const display = {
     your: hand,
     cpu: cpu,
