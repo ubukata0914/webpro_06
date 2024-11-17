@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ガチャ</title>
+</head>
+<body>
+    <p>あなたは<%= your %>連ガチャを引きました．</p>
+    <p>結果:<%= cpu %></p>
+    <p>現在<%= total %>回ガチャを引いています．</p>
+    <hr>
+    <form action="/gatya">
+        <input type="number" name="number" required>
+        <label for="number">1連or10連</label>
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" values="じゃんけん　ポン">
+    </form>   
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>数当てゲーム</title>
+</head>
+<body>
+    <p><%= cpu %></p>
+    <p>入力した数:<%= your %></p>
+    <p>試行回数:<%= total %></p>
+    <hr>
+    <form action="/math">
+        <input type="number" name="number" required>
+        <label for="number">1から100までの数字を予想してください</label>
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="hidden" name="num" value="<%= num %>">
+        <input type="submit" values="じゃんけん　ポン">
+    </form>   
+</body>
+</html>

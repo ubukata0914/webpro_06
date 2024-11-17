@@ -61,4 +61,71 @@ app.get("/janken", (req, res) => {
   res.render( 'janken', display );
 });
 
+app.get("/gatya", (req, res) => {
+  const number = req.query.number;
+  let cpu = [];
+  let total = Number( req.query.total );
+  console.log( {number, total});
+
+  if(number == 1) {
+    const num = Math.floor( Math.random() * 20 + 1 );
+    if(num===1) cpu.push('SSR');
+    else if(num<=4) cpu.push('SR');
+    else cpu.push('R');
+    total += 1;
+  } else if(number == 10) {
+    for (i=0; i<9; i++) {
+      const num = Math.floor( Math.random() * 20 + 1 );
+      if(num===1) cpu.push('SSR');
+      else if(num<=4) cpu.push('SR');
+      else cpu.push('R');
+      total += 1;
+    }
+    const num = Math.floor( Math.random() * 20 + 1 );
+    if(num===1) cpu.push('SSR');
+    else cpu.push('SR');
+    total += 1;
+  }
+  var result = cpu.join(',');
+  const display = {
+    your: number,
+    cpu: result,
+    total: total
+  }
+  res.render( 'gatya', display );
+});
+
+app.get("/math", (req, res) => {
+  const number = req.query.number;
+  let num = Number( req.query.num );
+  let message = '';
+  let total = Number( req.query.total ) || 0;
+  console.log( {number, total});
+
+  if (!num) {
+    num = Math.floor(Math.random() * 100 + 1); 
+  }
+
+  if( number > num ) {
+    message = 'あなたの予想した数は大きすぎます．';
+    total += 1;
+  } else if( number < num ) {
+    message = 'あなたの予想した数は小さすぎます．';
+    total += 1;
+  } else {
+    message = '正解です!';
+    num = Math.floor(Math.random() * 100 + 1);
+    total = 0;
+  }
+
+  const display = {
+    your: number,
+    cpu: message,
+    total: total,
+    num: num
+  }
+  res.render( 'math', display );
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
+
