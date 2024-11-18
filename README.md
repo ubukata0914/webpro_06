@@ -16,10 +16,6 @@ views/janken.ejs | じゃんけんのテンプレートファイル
 views/gatya.ejs | ガチャのテンプレートファイル
 views/math.ejs | 数当てゲームのテンプレートファイル
 
-```javascript
-console.log('Hello');
-```
-
 ## プログラムの利用方法
 #### じゃんけん
 1. ターミナルを起動しwebpro_06に移動する
