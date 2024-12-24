@@ -93,7 +93,7 @@ app.post("/read", (req, res) => {
   const start = Number( req.body.start );
   console.log( "read -> " + start );
   if( start==0 ) res.json( {messages: bbs });
-  else res.json( {messages: bbs.slice( start )}); // slice→配列を切り取る
+  else res.json( {messages: bbs.slice( start )});
 });
 
 app.post("/post", (req, res) => {
@@ -103,6 +103,31 @@ app.post("/post", (req, res) => {
   // 本来はここでDBMSに保存する
   bbs.push( { name: name, message: message } );
   res.json( {number: bbs.length } );
+});
+
+app.get("/bbs", (req,res) => {
+    console.log("GET /BBS");
+    res.json( {test: "GET /BBS" });
+});
+
+app.post("/bbs", (req,res) => {
+    console.log("POST /BBS");
+    res.json( {test: "POST /BBS"});
+})
+
+app.get("/bbs/:id", (req,res) => {
+    console.log( "GET /BBS/" + req.params.id );
+    res.json( {test: "GET /BBS/" + req.params.id });
+});
+
+app.put("/bbs/:id", (req,res) => {
+    console.log( "PUT /BBS/" + req.params.id );
+    res.json( {test: "PUT /BBS/" + req.params.id });
+});
+
+app.delete("/bbs/:id", (req,res) => {
+    console.log( "DELETE /BBS/" + req.params.id );
+    res.json( {test: "DELETE /BBS/" + req.params.id });
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

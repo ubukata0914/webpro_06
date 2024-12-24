@@ -13,7 +13,7 @@ document.querySelector('#post').addEventListener('click', () => {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     };
-    console.log( params );
+    console.log( params ); // 何かおかしかったらここ確認
     const url = "/post";
     fetch( url, params )
     .then( (response) => {
