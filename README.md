@@ -18,7 +18,7 @@ views/gatya.ejs | ガチャの機能を実行した時の実行結果が表示�
 views/math.ejs | 数当てゲームの機能を実行した時の実行結果が表示される画面を記述するファイル
 
 ## プログラムの利用方法
-まず，
+ターミナルを起動し，```git clone https://github.com/ubukata0914/webpro_06.git```
 #### じゃんけん
 1. ターミナルを起動し，```cd webpro_06```と入力してwebpro_06に移動する
 1. 最初の一回のみ，```npm install```と入力して必要なパッケージを入手する
