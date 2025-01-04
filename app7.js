@@ -86,7 +86,8 @@ app.post("/add", (req, res) => {
 app.post("/check", (req, res) => {
   // 本来はここでDBMSに問い合わせる
   res.json( {number: bbs.length });
-});
+}); 
+// bbsに保存されているメッセージの数(bbs配列の長さ)を返す
 
 app.post("/read", (req, res) => {
   // 本来はここでDBMSに問い合わせる
@@ -95,6 +96,7 @@ app.post("/read", (req, res) => {
   if( start==0 ) res.json( {messages: bbs });
   else res.json( {messages: bbs.slice( start )}); // slice→配列を切り取る
 });
+// 掲示板のメッセージを取得
 
 app.post("/post", (req, res) => {
   const name = req.body.name;
@@ -104,5 +106,6 @@ app.post("/post", (req, res) => {
   bbs.push( { name: name, message: message } );
   res.json( {number: bbs.length } );
 });
+// クライアントから送られたメッセージを掲示板に投稿
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
