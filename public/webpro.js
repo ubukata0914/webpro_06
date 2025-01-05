@@ -15,7 +15,7 @@ document.querySelector('#post').addEventListener('click', () => {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     };
-    console.log( params ); // 何かおかしかったらここ確認
+    console.log( params ); 
     const url = "/post";
     fetch( url, params )
     .then( (response) => {
