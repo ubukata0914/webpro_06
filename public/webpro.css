@@ -8,16 +8,31 @@
     width: 8em;
 }
 
+#sub {
+    background-color: lightcyan;
+}
+
 .sub {
     width: 8em;
     margin-left: 30px;
+    background-color: lightcyan;
+}
+
+#date {
+    background-color: lightgoldenrodyellow;
 }
 
 .date {
     width: 8em;
     margin-left: 30px;
+    background-color: lightgoldenrodyellow;
+}
+
+#message {
+    background-color: aliceblue;
 }
 
 .mes {
     margin-left: 30px;
+    background-color: aliceblue;
 }
