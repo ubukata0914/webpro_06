@@ -39,7 +39,7 @@ app.post("/reply", (req, res) => {
     const message = req.body.message;
 
     if (!study[postId]) {
-        return res.status(400).json({ error: "Post not found" });
+        return res.status(400).json({ error: "Error" });
     }
 
     if (!study[postId].replies) {
@@ -55,7 +55,7 @@ app.post("/getReplies", (req, res) => {
     const postId = Number(req.body.postId);
 
     if (!study[postId]) {
-        return res.status(400).json({ error: "Post not found" });
+        return res.status(400).json({ error: "Error" });
     }
 
     res.json({ replies: study[postId].replies || [] });
