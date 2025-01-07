@@ -4,11 +4,15 @@ sequenceDiagram
   autonumber
   Webブラウザ ->> Webサーバ: Webページの取得
   Webサーバ ->> Webブラウザ:HTML,JS,CSS
-  Webブラウザ ->> BBSクライアント:起動
-  BBSクライアント ->> BBSサーバ:Post(書き込み)
-  BBSサーバ ->> BBSクライアント:全書き込み数
-  BBSクライアント ->> BBSサーバ:Read(読み込み)
-  BBSサーバ ->> BBSクライアント:掲示データ
-  BBSクライアント ->> BBSサーバ:Check(新規チェック)
-  BBSサーバ ->> BBSクライアント:全書き込み数
+  Webブラウザ ->> webproクライアント:起動
+  webproクライアント ->> webproサーバ:post(送信書き込み)
+  webproサーバ ->> webproクライアント:全送信書き込み数
+  webproクライアント ->> webproサーバ:read(送信読み込み)
+  webproサーバ ->> webproクライアント:送信掲示データ
+  webproクライアント ->> webproサーバ:check(新規チェック)
+  webproサーバ ->> webproクライアント:全送信書き込み数
+  webproクライアント ->> webproサーバ:reply(返信書き込み)
+  webproサーバ ->> webproクライアント:全返信書き込み数
+  webproクライアント ->> webproサーバ:getReplies(返信読み込み)
+  webproサーバ ->> webproクライアント:返信掲示データ
 ```
