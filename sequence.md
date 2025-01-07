@@ -3,8 +3,8 @@
 sequenceDiagram
   autonumber
   Webブラウザ ->> Webサーバ: Webページの取得
-  Webサーバ ->> Webブラウザ:HTML,JS,CSS
-  Webブラウザ ->> webproクライアント:起動
+  Webサーバ ->> Webブラウザ:html,js,css
+  Webブラウザ ->> webproクライアント:アプリケーションの起動
   webproクライアント ->> webproサーバ:post(送信書き込み)
   webproサーバ ->> webproクライアント:全送信書き込み数
   webproクライアント ->> webproサーバ:read(送信読み込み)
